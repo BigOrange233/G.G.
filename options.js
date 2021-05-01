@@ -2,6 +2,7 @@ var task = document.getElementById('submittask');
 var submitButton = document.getElementById('submit');
 
 var addedSiteList = new Array();
+var addedQueryList = new Array();
 
 var counter= 0;
 var taskscount= 0;
@@ -65,4 +66,6 @@ function cacheSites(site) {
 
 }
 
-
+function cacheQuery(query) {
+  chrome.storage.sync.set({ queries: query }, function () {});
+}
