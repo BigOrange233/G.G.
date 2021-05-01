@@ -34,10 +34,6 @@ function addItem() {
 
 function cacheSites(site) {
   chrome.storage.sync.set({ sites: site }, function () {});
-
-  chrome.storage.sync.get(/* String or Array */ ["sites"], function (item) {
-    alert(item.sites);
-  });
 }
 
 function cacheQuery(query) {
