@@ -14,14 +14,14 @@ chrome.runtime.onInstalled.addListener(function() {
   });
 
   
-  let changeColor = document.getElementById('changeColor');
+  let changeColor = document.getElementById('block');
 
 chrome.storage.sync.get('color', function(data) {
   changeColor.style.backgroundColor = data.color;
   changeColor.setAttribute('value', data.color);
 });
 
-
+let element = document.getElementById('block');
 changeColor.onclick = function(element) {
     let color = element.target.value;
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
