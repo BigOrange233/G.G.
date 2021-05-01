@@ -14,35 +14,64 @@
         margin-right: 0;
         font-weight: bold;
       }
-      h6.center {
-      margin: auto;
-      width: 50%;
-      border: 3px solid green;
-      padding: 10px;
-}
+      .center {
+        text-align: center;
+        border: 3px solid green;
+      }
+      .center2 {
+        text-align: center;
+        border: 3px solid red;
+      }
+      .center3 {
+        text-align: center;
+        border: 3px solid rgb(0, 38, 255);
+        display: block;
+        font: 3em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
     </style>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" >
   </head>
 
-  
-  
-
-  
   <body>
-    <h6>Task Focusing for Chrome.</h6>
-    <div id="buttonDiv">
+    
+    <div class="center">
       
-      <form id="blockedSites">
-        <input type="text" id="siteInput" name="siteInput">
-          Input a website that you wish to access
-      
+      <h6 >Task Focusing for Chrome.</h6>
+    </div>
+
+
+    <br>
+    <div name="task" class="center2" >
+      <form>
+        <input type="text"  id=taskinput name="taskinput" placeholder="Enter your task:   ">
+        
       </form>
 
-        
-        
-        <button onclick="addItem() "id="submit" width="100%" >
-          submit
+
+      <button onclick="addItemtask() " id="submittask">
+        Input your task!
+      </button>
+
+      <br/><br/>
+            <ul id="tasklist"></ul>
+
+            
+    </div>
+
+    <div id="buttonDiv" class="center3">
+      
+      <form id="blockedSites">
+        <input type="text" id="siteInput" name="siteInput" placeholder="Input a website:">
+      </form>
+
+        <button onclick="addItem() "id="submit"  >
+          Input the Url!
         </button>
         <!-- <button onclick="removeItem()" id="deletebutton">remove item</button> -->
         

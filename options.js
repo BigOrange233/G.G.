@@ -1,9 +1,20 @@
-
+var task = document.getElementById('submittask');
 var submitButton = document.getElementById('submit');
-var deleteButton = document.getElementById('deletebutton');
+
 var addedSiteList = new Array();
 
 var counter= 0;
+var taskscount= 0;
+task.onclick = function() {
+  if(taskscount < 1){
+    addItemtask()
+    taskscount++
+  }else{
+    button.disabled = true
+  }
+};
+
+
 submitButton.onclick = function() {
   var addedSite = document.getElementById('siteInput').value
   addedSiteList.push(addedSite)
@@ -13,6 +24,14 @@ submitButton.onclick = function() {
 
 
 
+function addItemtask(){
+  var ul = document.getElementById("tasklist");
+  var candidate = document.getElementById("taskinput");
+  var li = document.createElement("li");
+  li.setAttribute('id',candidate.value);
+  li.appendChild(document.createTextNode(candidate.value));
+  ul.appendChild(li);
+}
 
 
 function addItem(){
