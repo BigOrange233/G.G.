@@ -21,10 +21,28 @@
       .center2 {
         text-align: center;
         border: 3px solid red;
+        display: block;
+        font: 3em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
       }
       .center3 {
         text-align: center;
         border: 3px solid rgb(0, 38, 255);
+        display: block;
+        font: 3em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+      .center4 {
+        text-align: center;
+        border: 3px solid rgb(234, 0, 255);
         display: block;
         font: 3em;
         margin-top: 1.33em;
@@ -88,9 +106,28 @@
       <br /><br />
       <ul id="dynamic-list"></ul>
 
-      <script src="options.js"></script>
+      
+    </div>
+
+    <div name="task" class="center4" >
+      <form>
+        <input type="text"  id="queryinput" name="queryinput" placeholder="Enter your query:   ">
+        
+      </form>
+
+
+      <button onclick="addItemQuery()" id="submitquery">
+        Enter your query!
+      </button>
+
+      <br/><br/>
+            <ul id="querylist"></ul>
+
+            <script src="options.js"></script>
     </div>
 
     <script src="options.js"></script>
   </body>
+
+  
 </html>

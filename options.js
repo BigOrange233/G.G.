@@ -1,11 +1,12 @@
 var task = document.getElementById('submittask');
 var submitButton = document.getElementById('submit');
-
+var querys = document.getElementById('submitquery');
 var addedSiteList = new Array();
 var addedQueryList = new Array();
 
 var counter= 0;
 var taskscount= 0;
+
 task.onclick = function() {
   if(taskscount < 1){
     addItemtask()
@@ -15,6 +16,9 @@ task.onclick = function() {
   }
 };
 
+querys.onclick = function(){
+  addItemQuery()
+};
 
 submitButton.onclick = function() {
   var addedSite = document.getElementById('siteInput').value
@@ -44,6 +48,16 @@ function addItem(){
   ul.appendChild(li);
 }
 
+function addItemQuery(){
+  var ul = document.getElementById("querylist");
+  var candidate = document.getElementById("queryinput");
+  var li = document.createElement("li");
+  li.setAttribute('id',candidate.value);
+  li.appendChild(document.createTextNode(candidate.value));
+  ul.appendChild(li);
+}
+
+
 function removeItem(){
   var ul = document.getElementById("dynamic-list");
   var candidate = document.getElementById("siteInput");
@@ -60,7 +74,7 @@ function cacheSites(site) {
   // var siteList = JSON.parse(localStorage.getItem("sites"));
   chrome.storage.sync.get(/* String or Array */["sites"], function(item){
     console.log(item);
-    alert(item.sites);
+    // alert(item.sites);
   });
 
 
