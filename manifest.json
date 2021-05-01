@@ -3,10 +3,12 @@
   "description": "Block sites and search results that aren't associated with your task",
   "version": "1.0",
   "manifest_version": 2,
+  "permissions":["storage","declarativeContent","activeTab"],
+  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["main.js"]
+      "js": ["pop.js"]
     }
   ],
   "browser_action": {
