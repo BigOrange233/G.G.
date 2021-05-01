@@ -1,13 +1,25 @@
 
 var currentSite = window.location.href;
+// alert(currentSite)
 
 isValidSite(currentSite)
 
 
-function isValidSite(site) {
+function isValidSite(currentSite) {
   chrome.storage.sync.get(/* String or Array */["sites"], function(item){
-    console.log("Hello world");
-    alert(item.sites);
+    var sites = item.sites
+    // alert(sites)
+  
+
+    // var i;
+    // for(i=0; i < sites.length; i++) {
+    //   alert(sites[i]);
+    // }
+    if(sites.includes(currentSite) === false) {
+      alert("not the same")
+      window.location.replace("options.html")
+    }
   });
+
 }
 
