@@ -5,7 +5,9 @@ var currentSite = window.location.href;
 isValidSite(currentSite)
 
 
+
 function isValidSite(currentSite) {
+
   chrome.storage.sync.get(/* String or Array */["sites"], function(item){
     var sites = item.sites
     // alert(sites)
