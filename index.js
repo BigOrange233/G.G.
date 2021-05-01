@@ -19,7 +19,7 @@ function isValidSite(currentSite) {
     // }
     if(sites.includes(currentSite) === false) {
       alert("not the same")
-      window.location.replace("options.html")
+      window.location.replace("http://thequalitybydesign.com")
     }
   });
 
