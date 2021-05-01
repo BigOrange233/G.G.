@@ -11,9 +11,16 @@ submitButton.onclick = function() {
 
 
 function cacheSites(site) {
-  localStorage.setItem("sites", JSON.stringify(addedSiteList));
+  // localStorage.setItem("sites", JSON.stringify(addedSiteList));
 
-  var siteList = JSON.parse(localStorage.getItem("sites"));
-  alert(siteList)
+  chrome.storage.sync.set({ "sites": addedSiteList }, function(){});
+
+
+  // var siteList = JSON.parse(localStorage.getItem("sites"));
+  chrome.storage.sync.get(/* String or Array */["sites"], function(item){
+    console.log(item);
+    alert(item.sites);
+  });
+
 
 }

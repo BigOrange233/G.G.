@@ -1,44 +1,13 @@
-// chrome.runtime.onInstalled.addListener(function() {
-//     chrome.storage.sync.set({color: '#3aa757'}, function() {
-//       console.log('The color is green.');
-//     });
-//     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-//       chrome.declarativeContent.onPageChanged.addRules([{
-//         conditions: [new chrome.declarativeContent.PageStateMatcher({
-//           pageUrl: {hostEquals: 'developer.chrome.com'},
-//         })
-//         ],
-//             actions: [new chrome.declarativeContent.ShowPageAction()]
-//       }]);
-//     });
-//   });
 
-  
-//   let changeColor = document.getElementById('block');
+var currentSite = window.location.href;
 
-// chrome.storage.sync.get('color', function(data) {
-//   changeColor.style.backgroundColor = data.color;
-//   changeColor.setAttribute('value', data.color);
-// });
-
-// let element = document.getElementById('block');
-// changeColor.onclick = function(element) {
-//     let color = element.target.value;
-//     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-//       chrome.tabs.executeScript(
-//           tabs[0].id,
-//           {code: 'document.body.style.backgroundColor = "' + color + '";'});
-//     });
-//   };
+isValidSite(currentSite)
 
 
-
-changeColor.onclick = function(element) {
-    let color = element.target.value;
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.executeScript(
-          tabs[0].id,
-          {code: 'document.body.style.backgroundColor = "' + color + '";'});
-    });
-  };
+function isValidSite(site) {
+  chrome.storage.sync.get(/* String or Array */["sites"], function(item){
+    console.log("Hello world");
+    alert(item.sites);
+  });
+}
 
