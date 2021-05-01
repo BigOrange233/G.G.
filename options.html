@@ -2,27 +2,26 @@
   <head>
     <style>
       button {
-        height: 30px;
-        width: 30px;
         outline: none;
         margin: 10px;
       }
     </style>
   </head>
 
-  <div>
-    <form>
-      <input type="text" id="fname" name="fname"><br><br>
-    </form>
-  </div>
+
   <body>
     <div id="buttonDiv">
-        <button id="changeColor"></button>
-        <script src="index.js"></script>
+
+      <form id="blockedSites">
+        <input type="text" id="siteInput" name="siteInput">
+          Input a website that you wish to access
+      
+      </form>
+
+        <button id="submit" width="100%">
+          submit
+        </button>
+        <script src="options.js"></script>
     </div>
-    <div>
-      <p>Choose a different background color!</p>
-    </div>
-  </body>
   <script src="options.js"></script>
 </html>
