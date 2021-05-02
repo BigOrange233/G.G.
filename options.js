@@ -17,6 +17,9 @@ task.onclick = function() {
 };
 
 querys.onclick = function(){
+  var addedquery = document.getElementById('queryinput').value
+  addedQueryList.push(addedquery)
+  cacheQuery(addedQueryList)
   addItemQuery()
 };
 
