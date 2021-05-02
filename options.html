@@ -5,30 +5,129 @@
         outline: none;
         margin: 10px;
       }
+      h6{
+        display: block;
+        font-size:5em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+      .center {
+        text-align: center;
+        border: 3px solid green;
+      }
+      .center2 {
+        text-align: center;
+        border: 3px solid red;
+        display: block;
+        font: 3em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+      .center3 {
+        text-align: center;
+        border: 3px solid rgb(0, 38, 255);
+        display: block;
+        font: 3em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
+      .center4 {
+        text-align: center;
+        border: 3px solid rgb(234, 0, 255);
+        display: block;
+        font: 3em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+      }
     </style>
+
+<link rel="stylesheet" href="style.css" >
   </head>
 
   <body>
-    <div id="buttonDiv">
+    
+    <div class="center">
+      
+      <h6 >Task Focusing for Chrome.</h6>
+    </div>
+
+
+    <br>
+    <div name="task" class="center2" >
+      <form>
+        <input type="text"  id=taskinput name="taskinput" placeholder="Enter your task:   ">
+        
+      </form>
+
+
+      <button onclick="addItemtask() " id="submittask">
+        Input your task!
+      </button>
+
+      <br/><br/>
+            <ul id="tasklist"></ul>
+
+            
+    </div>
+
+    <div id="buttonDiv" class="center3">
+      
       <form id="blockedSites">
-        <input type="text" id="siteInput" name="siteInput" />
-        Input a website that you wish to access
+        <input type="text" id="siteInput" name="siteInput" placeholder="Input a website:">
       </form>
 
-      <form id="queries">
-        <input type="text" id="queryInput" name="queryInput" />
-        Input a search query that you would like to make valid
-      </form>
+        <button onclick="addItem() "id="submit"  >
+          Input the Url!
+        </button>
+        <!-- <button onclick="removeItem()" id="deletebutton">remove item</button> -->
+        
+            <br/><br/>
+            <ul id="dynamic-list"></ul>
 
-      <button onclick="addItem() " id="submit" width="100%">submit</button>
-      <!-- <button onclick="removeItem()" id="deletebutton">remove item</button> -->
+
+            <script src="options.js"></script>
+
+
+
+
 
       <br /><br />
       <ul id="dynamic-list"></ul>
 
-      <script src="options.js"></script>
+      
+    </div>
+
+    <div name="task" class="center4" >
+      <form>
+        <input type="text"  id="queryinput" name="queryinput" placeholder="Enter your query:   ">
+        
+      </form>
+
+
+      <button onclick="addItemQuery()" id="submitquery">
+        Enter your query!
+      </button>
+
+      <br/><br/>
+            <ul id="querylist"></ul>
+
+            <script src="options.js"></script>
     </div>
 
     <script src="options.js"></script>
   </body>
+
+  
 </html>

@@ -1,39 +1,82 @@
-var submitButton = document.getElementById("submit");
+var task = document.getElementById('submittask');
+var submitButton = document.getElementById('submit');
+var querys = document.getElementById('submitquery');
 var addedSiteList = new Array();
 var addedQueryList = new Array();
 
-var counter = 0;
-submitButton.onclick = function () {
-  var addedSite = document.getElementById("siteInput").value;
-  var addedQuery = document.getElementById("queryInput").value;
-  console.log(addedSite);
-  console.log(addedQuery);
-  if (addedSite.length == 0) {
-    return;
-  } else {
-    addedSiteList.push(addedSite);
-    cacheSites(addedSiteList);
-    addItem();
-  }
-  if (addedQuery.length == 0) {
-    return;
-  } else {
-    addedQueryList.push(addedQuery);
-    cacheQuery(addedQueryList);
+var counter= 0;
+var taskscount= 0;
+
+task.onclick = function() {
+  if(taskscount < 1){
+    addItemtask()
+    taskscount++
+  }else{
+    button.disabled = true
   }
 };
 
-function addItem() {
-  var ul = document.getElementById("dynamic-list");
-  var candidate = document.getElementById("siteInput");
+querys.onclick = function(){
+  addItemQuery()
+};
+
+submitButton.onclick = function() {
+  var addedSite = document.getElementById('siteInput').value
+  addedSiteList.push(addedSite)
+  cacheSites(addedSiteList)
+  addItem()
+};
+
+
+
+function addItemtask(){
+  var ul = document.getElementById("tasklist");
+  var candidate = document.getElementById("taskinput");
   var li = document.createElement("li");
-  li.setAttribute("id", candidate.value);
+  li.setAttribute('id',candidate.value);
   li.appendChild(document.createTextNode(candidate.value));
   ul.appendChild(li);
 }
 
+
+function addItem(){
+  var ul = document.getElementById("dynamic-list");
+  var candidate = document.getElementById("siteInput");
+  var li = document.createElement("li");
+  li.setAttribute('id',candidate.value);
+  li.appendChild(document.createTextNode(candidate.value));
+  ul.appendChild(li);
+}
+
+function addItemQuery(){
+  var ul = document.getElementById("querylist");
+  var candidate = document.getElementById("queryinput");
+  var li = document.createElement("li");
+  li.setAttribute('id',candidate.value);
+  li.appendChild(document.createTextNode(candidate.value));
+  ul.appendChild(li);
+}
+
+
+function removeItem(){
+  var ul = document.getElementById("dynamic-list");
+  var candidate = document.getElementById("siteInput");
+  var item = document.getElementById(candidate.value);
+  ul.removeChild(item);
+}
+
 function cacheSites(site) {
-  chrome.storage.sync.set({ sites: site }, function () {});
+  // localStorage.setItem("sites", JSON.stringify(addedSiteList));
+
+  chrome.storage.sync.set({ "sites": addedSiteList }, function(){});
+
+
+  // var siteList = JSON.parse(localStorage.getItem("sites"));
+  chrome.storage.sync.get(/* String or Array */["sites"], function(item){
+    console.log(item);
+  });
+
+
 }
 
 function cacheQuery(query) {
