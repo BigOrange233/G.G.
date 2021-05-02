@@ -2,7 +2,7 @@
 var currentSite = window.location.href;
 
 if(window.location.href == "http://thequalitybydesign.com") {
-  alert("this is the site");
+  // alert("this is the site");
   window.stop();
 }
 else if(currentSite.includes("https://www.google.com/")) {
@@ -29,7 +29,7 @@ function isValidQuery(currentSite) {
     var i=0;
     var inQueryString = false;
     for(i; i<queries.length; i++) {
-      alert(queries[i])
+      // alert(queries[i])
 
       if(String(currentSite).indexOf(queries[i]) !== -1) {
         inQueryString = true;
