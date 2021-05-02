@@ -3,7 +3,7 @@ var submitButton = document.getElementById('submit');
 var querys = document.getElementById('submitquery');
 var addedSiteList = new Array();
 var addedQueryList = new Array();
-
+addedSiteList.push('http://thequalitybydesign.com/')
 var counter= 0;
 var taskscount= 0;
 
@@ -21,7 +21,7 @@ querys.onclick = function(){
   addedQueryList.push(addedquery)
   cacheQuery(addedQueryList)
   addItemQuery()
-};
+}; 
 
 submitButton.onclick = function() {
   var addedSite = document.getElementById('siteInput').value
