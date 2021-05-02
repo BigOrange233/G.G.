@@ -66,17 +66,11 @@ function removeItem(){
 }
 
 function cacheSites(site) {
-  // localStorage.setItem("sites", JSON.stringify(addedSiteList));
-
   chrome.storage.sync.set({ "sites": addedSiteList }, function(){});
 
-
-  // var siteList = JSON.parse(localStorage.getItem("sites"));
   chrome.storage.sync.get(/* String or Array */["sites"], function(item){
     console.log(item);
   });
-
-
 }
 
 function cacheQuery(query) {

@@ -1,8 +1,9 @@
 
 var currentSite = window.location.href;
 
-if(String(currentSite) == "http://thequalitybydesign.com") {
-  alert("this is the site")
+if(window.location.href == "http://thequalitybydesign.com") {
+  alert("this is the site");
+  window.stop();
 }
 else if(currentSite.includes("https://www.google.com/")) {
   isValidQuery(currentSite)
@@ -30,14 +31,14 @@ function isValidQuery(currentSite) {
     for(i; i<queries.length; i++) {
       alert(queries[i])
 
-      // if(String(currentSite).indexOf(queries[i]) !== -1) {
-      //   inQueryString = true;
-      // }
+      if(String(currentSite).indexOf(queries[i]) !== -1) {
+        inQueryString = true;
+      }
     }
 
-    // if(inQueryString === false) {
-    //   window.location.replace("http://thequalitybydesign.com")
-    // }
+    if(inQueryString === false) {
+      window.location.replace("http://thequalitybydesign.com")
+    }
 
   });
 }
