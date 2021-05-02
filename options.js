@@ -74,7 +74,6 @@ function cacheSites(site) {
   // var siteList = JSON.parse(localStorage.getItem("sites"));
   chrome.storage.sync.get(/* String or Array */["sites"], function(item){
     console.log(item);
-    // alert(item.sites);
   });
 
 
