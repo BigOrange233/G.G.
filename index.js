@@ -5,6 +5,13 @@ var currentSite = window.location.href;
 isValidSite(currentSite)
 
 
+chrome.contextMenus.create({
+  title: 'test',
+  onclick: function(e){
+      alert("asdasdasdas")
+  }
+
+}, function(){})
 
 function isValidSite(currentSite) {
 
