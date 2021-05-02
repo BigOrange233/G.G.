@@ -15,8 +15,16 @@ else {
 function isValidSite(currentSite) {
 
   chrome.storage.sync.get(/* String or Array */["sites"], function(item){
+    var validSite = false
     var sites = item.sites
-    if(sites.includes(currentSite) === false) {
+    var i=0
+    for(i; i<sites.length; i++) {
+      if(String(currentSite).indexOf(sites[i]) !== -1) {
+        validSite = true;
+      }
+    }
+
+    if(validSite === false) {
       window.location.replace("http://thequalitybydesign.com")
     }
   });
@@ -29,8 +37,6 @@ function isValidQuery(currentSite) {
     var i=0;
     var inQueryString = false;
     for(i; i<queries.length; i++) {
-      // alert(queries[i])
-
       if(String(currentSite).indexOf(queries[i]) !== -1) {
         inQueryString = true;
       }
